@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8413465543950746070}
   - component: {fileID: 2196287735894141796}
   - component: {fileID: 6031928947262914106}
+  - component: {fileID: 1044092627912472491}
   m_Layer: 0
   m_Name: meteorBrown_tiny1_0
   m_TagString: meteor
@@ -156,3 +157,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1044092627912472491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7140362045525809673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77f49fea0f091c4ea02cc22f73968b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Meteor
+  speed: 4
+  boundY: 4

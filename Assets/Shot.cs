@@ -16,6 +16,20 @@ public class Shot : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
     }
 
+    void OnCollisionEnter2D (Collision2D coll){
+    if (coll.gameObject.tag == "meteor"){
+        Destroy(coll.gameObject);
+        isShot = false;
+    }
+    if (coll.gameObject.tag == "enemy"){
+        Destroy(coll.gameObject);
+        isShot = false;
+    }
+
+
+
+    }
+
     void Update()
     {
         var posPlayer = player.transform.position;
