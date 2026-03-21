@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7594757582407897293}
   - component: {fileID: 9016376541971445486}
   - component: {fileID: -807433401554388241}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: meteorBrown_med1_0 (1) 1
-  m_TagString: Untagged
+  m_TagString: meteor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

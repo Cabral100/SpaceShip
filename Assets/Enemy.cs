@@ -7,13 +7,14 @@ public class Enemy : MonoBehaviour
 
     public GameObject bulletPrefab;
     public float shootRate = 2f;
+    private player playerObj;
 
     Transform player;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-
+        playerObj = GameObject.FindWithTag("Player").GetComponent<player>();
         InvokeRepeating("Shoot", 1f, shootRate);
     }
 
@@ -36,18 +37,17 @@ public class Enemy : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-
         Vector2 dir = (player.position - transform.position).normalized;
+        GameObject bullet = Instantiate(bulletPrefab, transform.position + (Vector3)(dir * 0.5f), Quaternion.identity);
 
         bullet.GetComponent<Rigidbody2D>().linearVelocity = dir * 6f;
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnCollisionEnter2D(Collision2D coll)
     {
-        if (col.gameObject.CompareTag("shot"))
+        if (coll.gameObject.CompareTag("Player"))
         {
-            Destroy(col.gameObject);
+            playerObj.vidas--;
             Destroy(gameObject);
         }
     }

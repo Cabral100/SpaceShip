@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1916737868593984067}
   - component: {fileID: 8329205258062492343}
   - component: {fileID: 727878046351891792}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: laserRed03_0
-  m_TagString: Untagged
+  m_TagString: enemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,7 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56661ef042f4bea46a12d0af47fb343a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBullet
-  speed: 6
 --- !u!70 &727878046351891792
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -2,6 +2,12 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
+    private player player;
+
+    void Start()
+    {
+        player = GameObject.FindWithTag("Player").GetComponent<player>();
+    }
     void Update()
     {
         if (transform.position.x < -10 || transform.position.x > 10)
@@ -10,12 +16,17 @@ public class EnemyBullet : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnCollisionEnter2D(Collision2D coll)
     {
-        if (col.gameObject.CompareTag("Player"))
+        if (coll.gameObject.CompareTag("Player"))
         {
-            Destroy(col.gameObject);
             Destroy(gameObject);
+            player.vidas--;
+        }
+        if (coll.gameObject.CompareTag("meteor"))
+        {
+            Destroy(gameObject);
+            Destroy(coll.gameObject);
         }
     }
 }

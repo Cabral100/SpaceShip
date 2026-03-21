@@ -4,6 +4,12 @@ public class Meteor : MonoBehaviour
 {
     public float speed = 4f;
     public float boundY = 4f;
+    private player player;
+
+    void Start()
+    {
+        player = GameObject.FindWithTag("Player").GetComponent<player>();
+    }
 
     void Update()
     {
@@ -22,12 +28,12 @@ public class Meteor : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnCollisionEnter2D(Collision2D coll)
     {
-        if (col.gameObject.CompareTag("shot"))
+        if (coll.gameObject.CompareTag("Player"))
         {
-            Destroy(col.gameObject);
             Destroy(gameObject);
+            player.vidas--;
         }
     }
 }

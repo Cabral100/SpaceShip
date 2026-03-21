@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1666658456663548871}
   - component: {fileID: 3265115775420966889}
   - component: {fileID: 8279424507500990901}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: meteorBrown_tiny1_0 (1)
   m_TagString: meteor
   m_Icon: {fileID: 0}
