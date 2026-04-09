@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class GameUI : MonoBehaviour
 {
     public TMP_Text meuTexto;
@@ -15,4 +16,10 @@ public class GameUI : MonoBehaviour
     {
         meuTexto.text = "Pontuação: " + player.score + "\n Vidas: " + player.vidas;
     }
+
+    public void ReiniciarJogo()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Meteor : MonoBehaviour
 {
@@ -26,6 +27,10 @@ public class Meteor : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if(player.score > 0 && player.score % 25 == 0)
+        {
+            StartCoroutine(SlowDown());
+        }
     }
 
     void OnCollisionEnter2D(Collision2D coll)
@@ -35,5 +40,12 @@ public class Meteor : MonoBehaviour
             Destroy(gameObject);
             player.vidas--;
         }
+    }
+    private IEnumerator SlowDown()
+    {
+        float speedOriginal = speed;
+        speed = 2f;
+        yield return new WaitForSeconds(10f);
+        speed = 3f;
     }
 }

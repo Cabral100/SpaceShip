@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
@@ -33,6 +34,10 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if(playerObj.score > 0 && playerObj.score % 25 == 0)
+        {
+            StartCoroutine(SlowDown());
+        }
     }
 
     void Shoot()
@@ -50,5 +55,13 @@ public class Enemy : MonoBehaviour
             playerObj.vidas--;
             Destroy(gameObject);
         }
+    }
+
+    private IEnumerator SlowDown()
+    {
+        float speedOriginal = speed;
+        speed = 2f;
+        yield return new WaitForSeconds(10f);
+        speed = 3f;
     }
 }
